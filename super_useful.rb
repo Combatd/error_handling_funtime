@@ -35,6 +35,14 @@ class BestFriend
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
+
+    if @yrs_known < 5
+      raise ArgumentError
+    end
+
+    rescue ArgumentError
+      puts "yrs_known argument must be 5 or more"
+      
   end
 
   def talk_about_friendship
