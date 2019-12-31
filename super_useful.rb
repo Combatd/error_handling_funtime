@@ -1,6 +1,8 @@
 # PHASE 2
 def convert_to_int(str)
   Integer(str)
+rescue ArgumentError
+  puts "ArgumentError: Argument for convert_to_int must be a string that looks like an integer"
 end
 
 # PHASE 3
