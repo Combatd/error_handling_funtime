@@ -11,17 +11,22 @@ FRUITS = ["apple", "banana", "orange"]
 def reaction(maybe_fruit)
   if FRUITS.include? maybe_fruit
     puts "OMG, thanks so much for the #{maybe_fruit}!"
-  else 
+  elsif maybe_fruit.downcase === "coffee"
+    raise ArgumentError
+    puts "#{maybe_fruit} is not a fruit!"
+  else
     raise StandardError 
   end 
 end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
-
+  
   puts "Feed me a fruit! (Enter the name of a fruit:)"
   maybe_fruit = gets.chomp
   reaction(maybe_fruit) 
+  rescue ArgumentError
+    retry
 end  
 
 # PHASE 4
